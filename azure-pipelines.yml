@@ -22,9 +22,9 @@ stages:
     steps:
     - task: Docker@2
       inputs:
-        containerRegistry: 'Docker Hub'
+        containerRegistry: 'Focus Mode Registry'
         repository: 'mux'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
-        tags: |
-          $(Build.BuildId)
+        tags: '$(Build.BuildId)'
+    
