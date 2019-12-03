@@ -12,4 +12,4 @@ COPY . .
 RUN mkdir media
 RUN mkdir public
 
-EXPOSE 8000
+ENTRYPOINT ["node", "index.js"]
