@@ -22,7 +22,7 @@ stages:
     steps:
     - task: Docker@2
       inputs:
-        containerRegistry: 'Focus Mode Registry'
+        containerRegistry: 'Docker Hub'
         repository: 'mux'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
