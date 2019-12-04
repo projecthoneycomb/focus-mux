@@ -1,4 +1,5 @@
 require('dotenv').config();
+const staticFfmpeg = require('ffmpeg-static');
 const NodeMediaServer = require('node-media-server');
  
 const config = {
@@ -16,7 +17,7 @@ const config = {
     allow_origin: '*'
   },
   trans: {
-    ffmpeg: '/usr/bin/ffmpeg',
+    ffmpeg: staticFfmpeg.path,
     tasks: [
       {
         app: 'live',
