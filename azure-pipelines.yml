@@ -13,10 +13,20 @@ variables:
 
 stages:
 - stage: Build
-  displayName: Build image
+  displayName: Build
   jobs:  
+  - job: Publish_deployment
+    displayName: Publish deployment info
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+    - task: PublishBuildArtifacts@1
+      inputs:
+        PathtoPublish: './deployment.yaml'
+        ArtifactName: 'deployment'
+        publishLocation: 'Container'
   - job: Build
-    displayName: Build
+    displayName: Build image
     pool:
       vmImage: 'ubuntu-latest'
     steps:
