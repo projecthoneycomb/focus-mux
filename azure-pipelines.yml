@@ -36,5 +36,5 @@ stages:
         repository: 'mux'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
-        tags: '$(Build.BuildId)'
+        tags: 'latest'
     
